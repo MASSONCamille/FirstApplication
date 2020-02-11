@@ -62,12 +62,8 @@ public class Projet {
 
     @Override
     public String toString() {
-        return "Projet{" +
-                "id=" + id +
-                ", num=" + num +
-                ", title='" + title + '\'' +
-                ", ecad=" + ecad.toString() +
-                ", list_etu=" + list_etu.toString() +
-                '}';
+        return "N°" + num + " : " + title + " (" + ecad.toString() + ")"
+                + "\n" + list_etu.toString() ;
+        
     }
 }

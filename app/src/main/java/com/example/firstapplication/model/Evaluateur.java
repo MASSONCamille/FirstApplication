@@ -60,12 +60,6 @@ public class Evaluateur {
 
     @Override
     public String toString() {
-        return "Evaluateur{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", email='" + email + '\'' +
-                ", mdp='" + mdp + '\'' +
-                '}';
+        return firstname.charAt(0) + ". " + name;
     }
 }

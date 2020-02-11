@@ -8,6 +8,10 @@ public class Donnees {
     private static ArrayList<Projet> list_pro = creatObj();
 
     public Donnees() {
+        list_etu.clear();
+        list_eva.clear();
+        list_pro.clear();
+
         Etudiant etu1 = new Etudiant(1,"MASSON","Camille");
         Etudiant etu2 = new Etudiant(2,"VIDAL","Thomas");
         Etudiant etu3 = new Etudiant(3,"ORTEGA","Merej");
@@ -19,17 +23,22 @@ public class Donnees {
 
         Evaluateur eva00 = new Evaluateur(1,"SPENGLER","Anne","spengler.anne@univ.fr","lol");
         Evaluateur eva01 = new Evaluateur(2,"LAROCHE","Pierre","laroche.pierre@univ.fr","mdr");
-        Evaluateur eva02 = new Evaluateur(3,"TEST","test","test@univ.fr","123");
+        Evaluateur eva02 = new Evaluateur(3,"TEST","Test","test@univ.fr","123");
         list_eva = addtolist(list_eva, eva00);
         list_eva = addtolist(list_eva, eva01);
         list_eva = addtolist(list_eva, eva02);
 
         ArrayList<Etudiant> list_proj1 = new ArrayList<Etudiant>();
-        list_proj1 = addtolist(list_etu, etu1);
-        list_proj1 = addtolist(list_etu, etu2);
-        list_proj1 = addtolist(list_etu, etu3);
-        Projet pro1 = new Projet(1,01,"BookYourRoom", eva02, list_proj1);
+        list_proj1.add(etu1);
+        list_proj1.add(etu2);
+        list_proj1.add(etu3);
+        Projet pro1 = new Projet(1, 01, "BookYourRoom", eva02, list_proj1);
         list_pro = addtolist(list_pro, pro1);
+
+        ArrayList<Etudiant> list_proj2 = new ArrayList<Etudiant>();
+        list_proj2.add(etu4);
+        Projet pro2 = new Projet(2, 02, "BookYourRoom", eva00, list_proj2);
+        list_pro = addtolist(list_pro, pro2);
     }
 
 
@@ -65,4 +74,5 @@ public class Donnees {
     public static void setList_pro(ArrayList<Projet> list_pro) {
         Donnees.list_pro = list_pro;
     }
+
 }
