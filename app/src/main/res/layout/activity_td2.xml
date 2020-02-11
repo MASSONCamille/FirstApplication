@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TD2">
+
+
+    <TextView
+        android:id="@+id/descri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:justificationMode="inter_word"
+        android:text="@string/saisietext"
+        android:textColor="@color/colorb"
+        android:textSize="21sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nbpost" />
+
+    <EditText
+        android:id="@+id/nbpost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="@string/nbposttext"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/color1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/btval"
+        android:textColor="@color/colorw"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="Verif"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/color2"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descri"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textpres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prestext"
+                android:textSize="21sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/editpres"
+                app:layout_constraintEnd_toStartOf="@+id/editpres"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/texttrav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/travtext"
+                android:textSize="21sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/edittrav"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/edittrav" />
+
+            <TextView
+                android:id="@+id/textcomp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comptext"
+                android:textSize="21sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/editcomp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/editcomp" />
+
+            <EditText
+                android:id="@+id/editpres"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/edt"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textpres"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="50dp"/>
+
+            <EditText
+                android:id="@+id/edittrav"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:inputType="number"
+                android:hint="@string/edt"
+                android:textSize="21sp"
+                app:layout_constraintLeft_toRightOf="@+id/texttrav"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editpres" />
+
+            <EditText
+                android:id="@+id/editcomp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:inputType="number"
+                android:hint="@string/edt"
+                android:textSize="21sp"
+                app:layout_constraintLeft_toRightOf="@+id/textcomp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edittrav" />
+
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:inputType="textPersonName"
+                android:hint="@string/commentaire"
+                android:textSize="21sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editcomp" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

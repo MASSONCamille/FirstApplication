@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">First Application</string>
+    <string name="wtext">Bienvenue sur l\'application de notation des projets tutorés</string>
+    <string name="btext">CONNEXION</string>
+    <string name="mailtext">Votre mail</string>
+    <string name="mdptext">Votre mot de passe</string>
+    <string name="msg">Bienvenue %1$s</string>
+    <string name="saisietext">Chacune des trois notes doit etre comprise entre 0 et 5. Utilisez le champ <i>Commentaire</i> si nécessaire pour ajouter toute information que vous jugeriez utile.</string>
+    <string name="nbposttext">Numéro de poster</string>
+    <string name="btval">VALIDER</string>
+    <string name="prestext">Qualité de la présentation</string>
+    <string name="travtext">Travail réalisé</string>
+    <string name="comptext">Compétences mouvelles</string>
+    <string name="edt">0 à 5</string>
+    <string name="commentaire">Commentaire</string>
+    <string name="msgE1">Tout les champs (sauf commentaire) doive etre remplie</string>
+    <string name="msgE2">les notes ne peuve pas etre supperieur à 5</string>
+    <string name="msgE3">erreur de connexion</string>
+    <string name="msgR">Saisi correct</string>
+</resources>
