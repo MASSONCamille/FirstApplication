@@ -1,8 +1,5 @@
 package com.example.firstapplication.model;
 
-import android.widget.ArrayAdapter;
-import android.widget.PopupMenu;
-
 import java.util.ArrayList;
 
 public class Donnees {
@@ -15,24 +12,24 @@ public class Donnees {
         Etudiant etu2 = new Etudiant(2,"VIDAL","Thomas");
         Etudiant etu3 = new Etudiant(3,"ORTEGA","Merej");
         Etudiant etu4 = new Etudiant(4,"devrais pas etre la","l\'inutile");
-        this.list_etu.addtolist(list_etu, etu1);
-        this.list_etu.addtolist(list_etu, etu2);
-        this.list_etu.addtolist(list_etu, etu3);
-        this.list_etu.addtolist(list_etu, etu4);
+        list_etu = addtolist(list_etu, etu1);
+        list_etu = addtolist(list_etu, etu2);
+        list_etu = addtolist(list_etu, etu3);
+        list_etu = addtolist(list_etu, etu4);
 
         Evaluateur eva00 = new Evaluateur(1,"SPENGLER","Anne","spengler.anne@univ.fr","lol");
         Evaluateur eva01 = new Evaluateur(2,"LAROCHE","Pierre","laroche.pierre@univ.fr","mdr");
         Evaluateur eva02 = new Evaluateur(3,"TEST","test","test@univ.fr","123");
-        this.list_eva.addtolist(list_eva, eva00);
-        this.list_eva.addtolist(list_eva, eva01);
-        this.list_eva.addtolist(list_eva, eva02);
+        list_eva = addtolist(list_eva, eva00);
+        list_eva = addtolist(list_eva, eva01);
+        list_eva = addtolist(list_eva, eva02);
 
         ArrayList<Etudiant> list_proj1 = new ArrayList<Etudiant>();
-        list_proj1.addtolist(list_etu, etu1);
-        list_proj1.addtolist(list_etu, etu2);
-        list_proj1.addtolist(list_etu, etu3);
+        list_proj1 = addtolist(list_etu, etu1);
+        list_proj1 = addtolist(list_etu, etu2);
+        list_proj1 = addtolist(list_etu, etu3);
         Projet pro1 = new Projet(1,01,"BookYourRoom", eva02, list_proj1);
-        this.list_pro.addtolist(list_pro, pro1);
+        list_pro = addtolist(list_pro, pro1);
     }
 
 

@@ -13,7 +13,6 @@ import com.example.firstapplication.model.Projet;
 public class ListeActivity extends AppCompatActivity {
 
     private String utilisateur;
-    private static Donnees data = new Donnees();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,7 @@ public class ListeActivity extends AppCompatActivity {
         super.onStart();
 
         ListView listView = this.findViewById(R.id.liste);
-        ArrayAdapter<Projet> adaptateur = new ArrayAdapter<Projet>(this, android.R.layout.simple_list_item_1, this.data.getList_pro());
+        ArrayAdapter<Projet> adaptateur = new ArrayAdapter<Projet>(this, android.R.layout.simple_list_item_1, Donnees.getList_pro());
         listView.setAdapter(adaptateur);
 
 
