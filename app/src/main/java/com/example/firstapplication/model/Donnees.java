@@ -3,14 +3,12 @@ package com.example.firstapplication.model;
 import java.util.ArrayList;
 
 public class Donnees {
+    private static Donnees instance = null;
     private static ArrayList<Etudiant> list_etu = creatObj();
     private static ArrayList<Evaluateur> list_eva = creatObj();
     private static ArrayList<Projet> list_pro = creatObj();
 
-    public Donnees() {
-        list_etu.clear();
-        list_eva.clear();
-        list_pro.clear();
+    private Donnees() {
 
         Etudiant etu1 = new Etudiant(1,"MASSON","Camille");
         Etudiant etu2 = new Etudiant(2,"VIDAL","Thomas");
@@ -75,4 +73,10 @@ public class Donnees {
         Donnees.list_pro = list_pro;
     }
 
+    public static Donnees getInstance() {
+        if (instance == null){
+            instance = new Donnees();
+        }
+        return instance;
+    }
 }

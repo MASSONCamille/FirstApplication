@@ -62,4 +62,17 @@ public class Evaluateur {
     public String toString() {
         return firstname.charAt(0) + ". " + name;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean ok = false;
+        if (super.equals(obj)) ok = true;
+        if (this.getClass().equals(obj.getClass())){
+            Evaluateur eva = (Evaluateur)obj;
+            if (this.getEmail().equals(eva.getEmail())) ok = true;
+
+        }
+        return ok;
+
+    }
 }

@@ -29,10 +29,8 @@ public class ListeActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        new Donnees();
-
         ListView listView = this.findViewById(R.id.liste);
-        ArrayAdapter<Projet> adaptateur = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Donnees.getList_pro());
+        ArrayAdapter<Projet> adaptateur = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Donnees.getInstance().getList_pro());
         listView.setAdapter(adaptateur);
     }
 }
