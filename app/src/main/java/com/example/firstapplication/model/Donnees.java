@@ -73,10 +73,40 @@ public class Donnees {
         Donnees.list_pro = list_pro;
     }
 
+    public Evaluateur getUserById(String mail, String mdp){
+        Evaluateur that = new Evaluateur();
+        that.setMdp(mdp);
+        that.setEmail(mail);
+
+        Evaluateur eva = null;
+
+        for(int i = 0; i<getList_eva().size(); i++) {
+            if(getList_eva().get(i).equals(that))
+                if(getList_eva().get(i).getMdp().equals(that.getMdp()))
+                    eva = getList_eva().get(i);
+        }
+
+        return eva;
+    }
+
+    public static Evaluateur getUserById(Evaluateur that){
+        Evaluateur eva = null;
+
+        for(int i = 0; i<getList_eva().size(); i++) {
+            if(getList_eva().get(i).equals(that))
+                if(getList_eva().get(i).getMdp().equals(that.getMdp()))
+                    eva = getList_eva().get(i);
+        }
+
+        return eva;
+    }
+
     public static Donnees getInstance() {
         if (instance == null){
             instance = new Donnees();
         }
         return instance;
     }
+
+
 }

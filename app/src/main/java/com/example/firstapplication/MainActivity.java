@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.firstapplication.model.Donnees;
+import com.example.firstapplication.model.Evaluateur;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -27,15 +30,17 @@ public class MainActivity extends AppCompatActivity {
     public void connexion(View view){
         EditText mail = this.findViewById(R.id.edit1);
         EditText mdp = this.findViewById(R.id.edit2);
+        Evaluateur user = Donnees.getInstance().getUserById(mail.getText().toString(), mdp.getText().toString());
 
-        if (mail.getText().toString().equals( "masson.camille@ymail.com" ) && mdp.getText().toString().equals("123")){
+        if (user != null){
             Intent intent = new Intent(MainActivity.this, ListeActivity.class);
-            intent.putExtra("user",mail.getText().toString());
+            intent.putExtra("user",user.getEmail());
             startActivity(intent);
         }
         else{
             Toast.makeText(this,R.string.msgE3,Toast.LENGTH_LONG).show();
         }
+
 
     }
 

@@ -1,5 +1,7 @@
 package com.example.firstapplication.model;
 
+import android.widget.EditText;
+
 public class Evaluateur {
     private int id;
     private String name;
@@ -66,7 +68,7 @@ public class Evaluateur {
     @Override
     public boolean equals(Object obj) {
         boolean ok = false;
-        if (super.equals(obj)) ok = true;
+
         if (this.getClass().equals(obj.getClass())){
             Evaluateur eva = (Evaluateur)obj;
             if (this.getEmail().equals(eva.getEmail())) ok = true;
@@ -75,4 +77,5 @@ public class Evaluateur {
         return ok;
 
     }
+
 }
