@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (user != null){
             Intent intent = new Intent(MainActivity.this, ListeActivity.class);
-            intent.putExtra("user",user.getEmail());
+            intent.putExtra("user",user);
             startActivity(intent);
         }
         else{

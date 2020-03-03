@@ -2,7 +2,9 @@ package com.example.firstapplication.model;
 
 import android.widget.EditText;
 
-public class Evaluateur {
+import java.io.Serializable;
+
+public class Evaluateur implements Serializable {
     private int id;
     private String name;
     private String firstname;

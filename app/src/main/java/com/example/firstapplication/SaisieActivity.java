@@ -6,12 +6,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
 
-public class TD2 extends AppCompatActivity {
+public class SaisieActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_td2);
+        setContentView(R.layout.activity_saisie);
     }
 
     public void Verif(View view){

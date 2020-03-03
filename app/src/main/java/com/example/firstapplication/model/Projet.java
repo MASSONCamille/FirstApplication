@@ -1,8 +1,9 @@
 package com.example.firstapplication.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Projet {
+public class Projet implements Serializable {
     private int id;
     private int num;
     private String title;
@@ -62,8 +63,17 @@ public class Projet {
 
     @Override
     public String toString() {
-        return "N°" + num + " : " + title + " (" + ecad.toString() + ")"
-                + "\n" + list_etu.toString() ;
+        return "N°" + num + " : " + title + " (" + ecad.toString() + ")";
+
+
+
+
+
+
+
+
+
+
         
     }
 
