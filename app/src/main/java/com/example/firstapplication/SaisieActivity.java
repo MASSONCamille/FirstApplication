@@ -47,6 +47,7 @@ public class SaisieActivity extends AppCompatActivity {
         }
         else{
             Toast.makeText(this, String.format(getString(R.string.msgR), npost.getText().toString(), npres.getText().toString(), ntrav.getText().toString()),Toast.LENGTH_LONG).show();
+            this.finish();
         }
     }
 
