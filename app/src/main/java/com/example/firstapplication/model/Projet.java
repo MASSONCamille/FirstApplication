@@ -7,14 +7,14 @@ public class Projet implements Serializable {
     private int id;
     private int num;
     private String title;
-    private Evaluateur ecad;
+    private Evaluateur encad;
     private ArrayList<Etudiant> list_etu;
 
-    public Projet(int id, int num, String title, Evaluateur ecad, ArrayList<Etudiant> list_etu) {
+    public Projet(int id, int num, String title, Evaluateur encad, ArrayList<Etudiant> list_etu) {
         this.id = id;
         this.num = num;
         this.title = title;
-        this.ecad = ecad;
+        this.encad = encad;
         this.list_etu = list_etu;
     }
 
@@ -46,11 +46,11 @@ public class Projet implements Serializable {
     }
 
     public Evaluateur getEcad() {
-        return ecad;
+        return encad;
     }
 
     public void setEcad(Evaluateur ecad) {
-        this.ecad = ecad;
+        this.encad = ecad;
     }
 
     public ArrayList<Etudiant> getList_etu() {
@@ -63,7 +63,7 @@ public class Projet implements Serializable {
 
     @Override
     public String toString() {
-        return "N°" + num + " : " + title + " (" + ecad.toString() + ")";
+        return "N°" + num + " : " + title + " (" + encad.toString() + ")";
 
 
 

@@ -3,4 +3,19 @@
     <string name="app_name">First Application</string>
     <string name="btext">CONNECTION</string>
     <string name="btval">SUBMIT</string>
+    <string name="commentaire">Comment</string>
+    <string name="comptext">Require Skills</string>
+    <string name="edt">0 to 5</string>
+    <string name="mailtext">Your mail</string>
+    <string name="mdptext">Your password</string>
+    <string name="msg">Welcome %1$s</string>
+    <string name="msgE1">All fields must to be complete</string>
+    <string name="msgE2">the marks can\'t be more to 5</string>
+    <string name="msgE3">connection error</string>
+    <string name="nbposttext">Poster number</string>
+    <string name="prestext">Presentation quality</string>
+    <string name="saisietext">Each of the three notes must be between 0 and 5. Use the <i> Comment </i> field if necessary to add any information you consider useful.</string>
+    <string name="travtext">Work clear</string>
+    <string name="wtext">Welcome on marking application for 15/5tutored projects</string>
+    <string name="msgR">the marks are %1$s, %2$s , %3$s</string>
 </resources>

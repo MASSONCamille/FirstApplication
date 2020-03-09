@@ -45,7 +45,7 @@ public class ListeActivity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
         Projet proj = new Projet();
-        parent.getAdapter().get
+        proj = Donnees.getInstance().getList_pro().get(position);
         Intent intent = new Intent(ListeActivity.this, SaisieActivity.class);
         intent.putExtra("proj",proj);
         startActivity(intent);

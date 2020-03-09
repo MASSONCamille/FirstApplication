@@ -6,19 +6,38 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
 
+import com.example.firstapplication.model.Projet;
+
 public class SaisieActivity extends AppCompatActivity {
+
+    private Projet projet;
+    private EditText npost;
+    private EditText npres;
+    private EditText ntrav;
+    private EditText ncomp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saisie);
+
+        this.projet = (Projet) this.getIntent().getSerializableExtra("proj");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        this.npost = (EditText)findViewById(R.id.nbpost);
+        this.npres = (EditText)findViewById(R.id.editpres);
+        this.ntrav = (EditText)findViewById(R.id.edittrav);
+        this.ncomp = (EditText)findViewById(R.id.editcomp);
+
+        this.npost.setText(String.valueOf(projet.getNum()));
+        this.npost.setEnabled(false);
+
     }
 
     public void Verif(View view){
-        EditText npost = (EditText)findViewById(R.id.nbpost);
-        EditText npres = (EditText)findViewById(R.id.editpres);
-        EditText ntrav = (EditText)findViewById(R.id.edittrav);
-        EditText ncomp = (EditText)findViewById(R.id.editcomp);
 
         if (npost.getText().toString().isEmpty() || npres.getText().toString().isEmpty() || ntrav.getText().toString().isEmpty() || ncomp.getText().toString().isEmpty()){
             Toast.makeText(this,R.string.msgE1,Toast.LENGTH_LONG).show();
@@ -27,7 +46,7 @@ public class SaisieActivity extends AppCompatActivity {
             Toast.makeText(this,R.string.msgE2,Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(this,R.string.msgR,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,String.format(getString(R.string.msgR), npost.getText().toString(), npres.getText().toString(), ntrav.getText().toString()),Toast.LENGTH_LONG).show();
         }
     }
 }
