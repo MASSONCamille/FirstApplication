@@ -18,4 +18,6 @@
     <string name="travtext">Work clear</string>
     <string name="wtext">Welcome on marking application for 15/5tutored projects</string>
     <string name="msgR">the marks are %1$s, %2$s , %3$s</string>
+    <string name="btnann">CANCEL</string>
+    <string name="givupmark">marking as be give up</string>
 </resources>

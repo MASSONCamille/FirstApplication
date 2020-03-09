@@ -37,16 +37,21 @@ public class SaisieActivity extends AppCompatActivity {
 
     }
 
-    public void Verif(View view){
+    public void Valid(View view){
 
         if (npost.getText().toString().isEmpty() || npres.getText().toString().isEmpty() || ntrav.getText().toString().isEmpty() || ncomp.getText().toString().isEmpty()){
-            Toast.makeText(this,R.string.msgE1,Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.msgE1, Toast.LENGTH_LONG).show();
         }
         else if (Integer.parseInt(npres.getText().toString()) > 5 || Integer.parseInt(ntrav.getText().toString()) > 5 || Integer.parseInt(ncomp.getText().toString()) > 5){
-            Toast.makeText(this,R.string.msgE2,Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.msgE2, Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(this,String.format(getString(R.string.msgR), npost.getText().toString(), npres.getText().toString(), ntrav.getText().toString()),Toast.LENGTH_LONG).show();
+            Toast.makeText(this, String.format(getString(R.string.msgR), npost.getText().toString(), npres.getText().toString(), ntrav.getText().toString()),Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void Annul(View view){
+        Toast.makeText(this, R.string.givupmark, Toast.LENGTH_LONG).show();
+        this.finish();
     }
 }

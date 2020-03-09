@@ -16,6 +16,7 @@
     <string name="msgE1">Tout les champs (sauf commentaire) doive etre remplie</string>
     <string name="msgE2">les notes ne peuve pas etre supperieur à 5</string>
     <string name="msgE3">erreur de connexion</string>
-    <string name="msgR">l</string>
     <string name="msgR">les notes sont %1$s, %2$s , %3$s</string>
+    <string name="btnann">ANNULER</string>
+    <string name="givupmark">abandon de la notation</string>
 </resources>
