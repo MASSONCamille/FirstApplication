@@ -14,9 +14,9 @@
     <string name="msgE3">connection error</string>
     <string name="nbposttext">Poster number</string>
     <string name="prestext">Presentation quality</string>
-    <string name="saisietext">Each of the three notes must be between 0 and 5. Use the <i> Comment </i> field if necessary to add any information you consider useful.</string>
+    <string name="saisietext">Each of the three notes must be between 0 and 5. Use the <i>Comment</i> field if necessary to add any information you consider useful.</string>
     <string name="travtext">Work clear</string>
-    <string name="wtext">Welcome on marking application for 15/5tutored projects</string>
+    <string name="wtext">Welcome on marking application for tutored projects</string>
     <string name="msgR">the marks are %1$s, %2$s , %3$s</string>
     <string name="btnann">CANCEL</string>
     <string name="givupmark">marking as be give up</string>

@@ -32,7 +32,7 @@ public class SaisieActivity extends AppCompatActivity {
         this.ntrav = (EditText)findViewById(R.id.edittrav);
         this.ncomp = (EditText)findViewById(R.id.editcomp);
 
-        this.npost.setText(String.valueOf(projet.getNum()));
+        this.npost.setText("N° " + String.valueOf(projet.getNum()));
         this.npost.setEnabled(false);
 
     }
