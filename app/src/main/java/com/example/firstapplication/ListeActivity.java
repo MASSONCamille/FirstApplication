@@ -14,10 +14,15 @@ import com.example.firstapplication.model.Donnees;
 import com.example.firstapplication.model.Evaluateur;
 import com.example.firstapplication.model.Projet;
 
-public class ListeActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+import java.util.ArrayList;
+
+public class ListeActivity extends AppCompatActivity /*implements AdapterView.OnItemClickListener*/ {
 
     private Evaluateur utilisateur;
     private ListView listView;
+    public static final int NOTE_POSTER = 0;
+    public static final int NOTE_SOUTENANCE = 1;
+    private static ArrayList<Projet> listeProjet = Donnees.getInstance().getList_pro();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +40,40 @@ public class ListeActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onStart();
 
         this.listView = this.findViewById(R.id.liste);
-        ArrayAdapter<Projet> adaptateur = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Donnees.getInstance().getList_pro());
-        this.listView.setAdapter(adaptateur);
+        ListeProjetAdaptateur adaptateur = new ListeProjetAdaptateur(this, listeProjet);
+        listView.setAdapter(adaptateur);
 
-        this.listView.setOnItemClickListener(this);
+//        ArrayAdapter<Projet> adaptateur = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Donnees.getInstance().getList_pro());
+//        this.listView.setAdapter(adaptateur);
+//
+//        this.listView.setOnItemClickListener(this);
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-        Projet proj = new Projet();
-        proj = Donnees.getInstance().getList_pro().get(position);
-        Intent intent = new Intent(ListeActivity.this, SaisieActivity.class);
-        intent.putExtra("proj",proj);
-        startActivity(intent);
+//    @Override
+//    public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+//        Projet proj = new Projet();
+//        proj = Donnees.getInstance().getList_pro().get(position);
+//        Intent intent = new Intent(ListeActivity.this, SaisieActivity.class);
+//        intent.putExtra("proj",proj);
+//        startActivity(intent);
+//    }
+
+    public void onClickPoster(View view){
+        int position = Integer.parseInt(view.getTag().toString());
+
+        Intent intent = new Intent(ListeActivity.this ,SaisieActivity.class);
+        intent.putExtra("typeNotation", NOTE_POSTER);
+        intent.putExtra("projet", this.listeProjet.get(position));
+        startActivityForResult(intent, NOTE_POSTER);
+    }
+
+    public void onClickSoutenance(View view){
+        int position = Integer.parseInt(view.getTag().toString());
+
+        Intent intent = new Intent(ListeActivity.this ,SaisieActivity.class);
+        intent.putExtra("typeNotation", NOTE_SOUTENANCE);
+        intent.putExtra("projet", this.listeProjet.get(position));
+        startActivityForResult(intent, NOTE_SOUTENANCE);
     }
 }

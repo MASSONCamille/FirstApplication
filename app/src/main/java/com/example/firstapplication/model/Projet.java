@@ -64,18 +64,14 @@ public class Projet implements Serializable {
     @Override
     public String toString() {
         return "N°" + num + " : " + title + " (" + encad.toString() + ")";
-
-
-
-
-
-
-
-
-
-
-        
     }
-
+    
+    public String ListeEtuToString() {
+        String liste = "";
+        for (Etudiant etu : list_etu) {
+            liste = liste + etu.getFirstname().charAt(0) + ". " + etu.getName() + " ";
+        }
+        return liste;
+    }
 
 }

@@ -34,7 +34,7 @@ public class Donnees {
         list_pro = addtolist(list_pro, pro1);
 
         ArrayList<Etudiant> list_proj2 = new ArrayList<Etudiant>();
-        list_proj2.add(etu4);
+        list_proj2.add(etu3);
         Projet pro2 = new Projet(2, 02, "BookYourRoom", eva00, list_proj2);
         list_pro = addtolist(list_pro, pro2);
     }
