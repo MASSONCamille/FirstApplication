@@ -7,6 +7,10 @@ public class Donnees {
     private static ArrayList<Etudiant> list_etu = creatObj();
     private static ArrayList<Evaluateur> list_eva = creatObj();
     private static ArrayList<Projet> list_pro = creatObj();
+    private static ArrayList<Notes> list_notes = creatObj();
+    private static int position;
+    public static final int NOTE_POSTER = 0;
+    public static final int NOTE_SOUTENANCE = 1;
 
     private Donnees() {
 
@@ -37,6 +41,8 @@ public class Donnees {
         list_proj2.add(etu3);
         Projet pro2 = new Projet(2, 02, "BookYourRoom", eva00, list_proj2);
         list_pro = addtolist(list_pro, pro2);
+
+        position = 0;
     }
 
 
@@ -71,6 +77,14 @@ public class Donnees {
 
     public static void setList_pro(ArrayList<Projet> list_pro) {
         Donnees.list_pro = list_pro;
+    }
+
+    public static ArrayList<Notes> getList_notes() {
+        return list_notes;
+    }
+
+    public static void setList_notes(ArrayList<Notes> list_notes) {
+        Donnees.list_notes = list_notes;
     }
 
     public Evaluateur getUserById(String mail, String mdp){
@@ -108,5 +122,11 @@ public class Donnees {
         return instance;
     }
 
+    public static void setNotesSoutenance(Projet projet, Evaluateur eva, double notePres, double noteTrav, double noteComp, String com){
+        list_notes.add(new Notes(projet, eva, NOTE_SOUTENANCE, notePres, noteTrav, noteComp, com));
+    }
 
+    public static void setNotesPoster(Projet projet, Evaluateur eva, double notePres, double noteTrav, double noteComp, String com){
+        list_notes.add(new Notes(projet, eva, NOTE_POSTER, notePres, noteTrav, noteComp, com));
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.firstapplication;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.widget.Toast;
 import android.view.View;
 
 import com.example.firstapplication.model.Donnees;
+import com.example.firstapplication.model.Evaluateur;
+import com.example.firstapplication.model.Notes;
 import com.example.firstapplication.model.Projet;
 
 public class SaisieActivity extends AppCompatActivity {
@@ -19,6 +22,7 @@ public class SaisieActivity extends AppCompatActivity {
     private EditText npres;
     private EditText ntrav;
     private EditText ncomp;
+    private EditText comment;
     public static final int NOTE_POSTER = 0;
     public static final int NOTE_SOUTENANCE = 1;
 
@@ -38,6 +42,7 @@ public class SaisieActivity extends AppCompatActivity {
         this.npres = (EditText) findViewById(R.id.editpres);
         this.ntrav = (EditText) findViewById(R.id.edittrav);
         this.ncomp = (EditText) findViewById(R.id.editcomp);
+        this.comment = (EditText) findViewById(R.id.editTextComment);
 
         if (this.typenote == NOTE_POSTER) this.npost.setText("Poster N° " + String.valueOf(projet.getNum()));
         if (this.typenote == NOTE_SOUTENANCE) this.npost.setText("Soutenance N° " + String.valueOf(projet.getNum()));
@@ -47,33 +52,27 @@ public class SaisieActivity extends AppCompatActivity {
 
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        if (resultCode != SaisieActivity.RESULT_OK){
-//            Toast.makeText(this, R.string.givupmark, Toast.LENGTH_LONG).show();
-//        }else {
-//            double[] notes =data.getDoubleArrayExtra("nom");
-//            String commentaire = data.getStringExtra("commentaire");
-//            if (requestCode == NOTE_POSTER){
-//                Donnees.getInstance().
-//            }
-//        }
-//    }
 
     public void Valid(View view) {
 
-        if (npost.getText().toString().isEmpty() || npres.getText().toString().isEmpty() || ntrav.getText().toString().isEmpty() || ncomp.getText().toString().isEmpty()) {
+        if (npost.getText().toString().isEmpty() || npres.getText().toString().isEmpty() ||
+                ntrav.getText().toString().isEmpty() || ncomp.getText().toString().isEmpty()) {
             Toast.makeText(this, R.string.msgE1, Toast.LENGTH_LONG).show();
-        } else if (Integer.parseInt(npres.getText().toString()) > 5 || Integer.parseInt(ntrav.getText().toString()) > 5 || Integer.parseInt(ncomp.getText().toString()) > 5) {
+        } else if (Integer.parseInt(npres.getText().toString()) > 5 ||
+                Integer.parseInt(ntrav.getText().toString()) > 5 ||
+                Integer.parseInt(ncomp.getText().toString()) > 5) {
             Toast.makeText(this, R.string.msgE2, Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, String.format(getString(R.string.msgR), npres.getText().toString(), ntrav.getText().toString(), ncomp.getText().toString()), Toast.LENGTH_LONG).show();
+            double[] notes = {Double.parseDouble(npres.getText().toString()), Double.parseDouble(ntrav.getText().toString()), Double.parseDouble(ncomp.getText().toString())};
+            Intent intent = new Intent();
+            intent.putExtra("notes", notes);
+            this.setResult(SaisieActivity.RESULT_OK, intent);
             this.finish();
         }
     }
 
     public void Annul(View view) {
-        Toast.makeText(this, R.string.givupmark, Toast.LENGTH_LONG).show();
+        this.setResult(SaisieActivity.RESULT_CANCELED);
         this.finish();
     }
 }

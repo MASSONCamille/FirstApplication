@@ -1,6 +1,7 @@
 package com.example.firstapplication;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.firstapplication.model.Donnees;
 import com.example.firstapplication.model.Evaluateur;
+import com.example.firstapplication.model.Notes;
 import com.example.firstapplication.model.Projet;
 
 import java.util.ArrayList;
@@ -75,5 +78,16 @@ public class ListeActivity extends AppCompatActivity /*implements AdapterView.On
         intent.putExtra("typeNotation", NOTE_SOUTENANCE);
         intent.putExtra("projet", this.listeProjet.get(position));
         startActivityForResult(intent, NOTE_SOUTENANCE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode != SaisieActivity.RESULT_OK) {
+            Toast.makeText(this, R.string.givupmark, Toast.LENGTH_LONG).show();
+        } else {
+            Notes notes = (Notes) data.getSerializableExtra("notes");
+
+
+        }
     }
 }
